@@ -15,7 +15,27 @@ document.getElementById('input-type').addEventListener('focus', function(){
 document.getElementById('input-type').addEventListener('blur', function(){
     document.body.style.backgroundColor ='white'
 });
-// //step-2 keydown
-// document.getElementById('input-type').addEventListener('keyup', function s ( ) {
-//     console.log(keyup);
+//step-2 keydown
+// document.getElementById('input-type').addEventListener('keydown', function ( ) {
+//     const addInput =document.getElementById('input-type');
+//     console.log(addInput.value);
 // })
+//step-2 keyup
+document.getElementById('input-type').addEventListener('keyup', function (event) {
+    const addInput =document.getElementById('delets');
+    if(event.target.value=='delete'){
+       // document.getElementById('delets')
+        addInput.removeAttribute('disabled');
+
+    }
+    else{
+addInput.setAttribute('disabled',true);
+    }
+})
+
+
+// change
+document.getElementById('input-type').addEventListener('change', function ( ) {
+    const addInputa =document.getElementById('input-type');
+    console.log(addInputa.value);
+})
