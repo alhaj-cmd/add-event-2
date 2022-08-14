@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event delegate</title>
+</head>
+<body>
+    <section id="container">
+        <h3>Event delegate section</h3>
+        <ul id="item-contain">
+            <li class="items-list">lorem use the data</li>
+            <li class="items-list">lorem use the data</li>
+            <li class="items-list">lorem use the data</li>
+            <li class="items-list">lorem use the data</li>
+            
+        </ul>
+        <button id="button">click Me</button>
+    </section>
+    
+    <!-- javascript link -->
+    <script>
+        // same condition 2 way
+        // const items = document.getElementsByClassName('items-list');
+        // for(const item of items){
+        //     item.addEventListener('click',function(){
+        //        document.getElementById('item-contain').
+        //        removeChild(item)
+        //     })
+        // }
+
+        // 2 system
+        // const items = document.getElementsByClassName('items-list');
+        // for(const item of items){
+        //     item.addEventListener('click',function(e){
+        //        e.target.parentNode.removeChild(e.target);
+        //     })
+        // }
+        // button handeler
+
+        document.getElementById('button').addEventListener('click',function(){
+            const li = document.createElement('li');
+            li.innerText = 'system out';
+            li.classList.add('items-list');
+            const parend = document.getElementById('container')
+            parend.appendChild(li);
+        })
+        document.getElementById('container').addEventListener('click', function(e){
+            e.target.parentNode.removeChild(e.target);
+           //console.log(e.target)
+        })
+    </script>
+    
+</body>
+</html>
